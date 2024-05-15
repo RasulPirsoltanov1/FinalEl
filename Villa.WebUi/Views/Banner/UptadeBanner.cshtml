@@ -1,0 +1,25 @@
+﻿@model UptadeBannerDto
+@{
+    ViewData["Title"] = "Banner Update Page";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post">
+    <input type="hidden" asp-for="Id" />
+    <label>Image Url</label>
+    <input type="text" asp-for="ImageUrl" class="form-control" />
+    <br />
+    <label>City </label>
+    <input type="text" asp-for="City" class="form-control" />
+    <br />
+    <label>Country </label>
+    <input type="text" asp-for="Country" class="form-control" />
+    <br />
+    <label>CoverText </label>
+    <input type="text" asp-for="CoverText" class="form-control" />
+    <br />
+    <label>Title</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <br />
+    <button class="btn btn-outline-dark">Update</button>
+</form>

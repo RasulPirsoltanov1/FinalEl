@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "R6NiA9c0dQoZWVD5bJStKQDX/wqYvjn1CC8sbc3ulq+Ou1svIbknrLJNRnk88buDgSX3xpSYByK4H7/hN6b+GQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Rasul\\Desktop\\Final\\Villa.Dto\\Villa.Dto.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Rasul\\.nuget\\packages\\mongodb.bson\\2.23.1\\mongodb.bson.2.23.1.nupkg.sha512",
+    "C:\\Users\\Rasul\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
+    "C:\\Users\\Rasul\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

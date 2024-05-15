@@ -1,0 +1,27 @@
+﻿@model ResultMessageDto
+@{
+    ViewData["Title"] = "Message detail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-striped">
+    <tr>
+        <th>Sender Name And Surname</th>
+        <td>@Model.Name</td>
+    </tr>
+     <tr>
+        <th>Sender Email</th>
+        <td>@Model.Email</td>
+    </tr>
+    <tr>
+        <th>Subject</th>
+        <td>@Model.Subject</td>
+    </tr>
+    <tr>
+        <th>Message content</th>
+        <td>@Model.MessageContent</td>
+    </tr>
+</table>
+
+
+<a asp-controller="Message" asp-action="Index" class="btn btn-dar">Go Back to Messages</a>

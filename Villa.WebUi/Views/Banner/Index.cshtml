@@ -1,0 +1,66 @@
+﻿@model List<ResultBannerDto>
+@{
+    ViewData["Title"] = "Banner List";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<table class="table table-hover table-bordered">
+    @{
+        int count = 0;
+    }
+    <tr>
+        <th>#</th>
+        <th>City</th
+        <th>Country</th
+        <th>CoverText</th>
+        <th>Title</th>
+        <th>Transactions</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.City</td>
+            <td>@item.Country</td>
+            <td>@item.CoverText</td>
+            <td>@item.Title</td>
+            <td>
+                <button onclick="deleteBanner(this)" id="@item.Id" class="btn btn-outline-danger">Delete</button>
+                <a asp-controller="Banner" asp-action="UptadeBanner" asp-route-id="@item.Id" class="btn btn-outline-info">Uptade</a>
+            </td>
+
+        </tr>
+    }
+
+
+</table>
+
+<a asp-controller="Banner" asp-action="CreateBanner" clas="btn btn-outline-dark">New Banner Add</a>
+
+
+<script>
+    function deleteBanner(button) {
+
+        var id = button.getAttribute("id");
+
+        Swal.fire({
+            title: "Are you sure you want to delete it?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!",
+            cancelButtonTest: "Cancel"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/Banner/DeleteBanner/" + id;
+            }
+        });
+    };
+
+
+
+</script>

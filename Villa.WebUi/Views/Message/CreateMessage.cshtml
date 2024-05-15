@@ -1,0 +1,20 @@
+﻿@model CreateMessageDto
+@{
+    ViewData["Title"] = "New Message add Page";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post">
+    <label>Name Surname</label>
+    <input type="text" asp-for="Name" class="form-control" />
+    <br />
+    <label>Subject </label>
+    <input type="text" asp-for="Subject" class="form-control" />
+    <br />
+    <label>Email</label>
+    <input type="text" asp-for="Email" class="form-control" />
+    <br />
+    <label>Message Content</label>
+    <textarea asp-for="MessageContent" class="form-control" rows="10"></textarea>
+    <button class="btn btn-outline-dark">Save</button>
+</form>

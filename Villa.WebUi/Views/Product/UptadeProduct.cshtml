@@ -1,0 +1,45 @@
+﻿@model UpdateProductDto
+@{
+    ViewData["Title"] = "Property Update Page";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post">
+    <input type="hidden" asp-for="Id" />
+    <label>Picture Url</label>
+    <input type="text" asp-for="ImageUrl" class="form-control" />
+    <br />
+    <label>Title</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <br />
+    <label>Category</label>
+    <select asp-for="Category" class="form-control">
+        <option>Category Choose</option>
+        <option value="Modern">Modern</option>
+        <option value="Penthouse">Penthouse</option>
+        <option value="Luxury">Luxury</option>
+        <option value="Wood">Wood</option>
+    </select>
+
+    <br />
+    <label>Price</label>
+    <input type="text" asp-for="Price" class="form-control" />
+    <br />
+    <label>BedroomCount</label>
+    <input type="text" asp-for="BedroomCount" class="form-control" />
+    <br />
+    <label>BathroomCount</label>
+    <input type="text" asp-for="BathroomCount" class="form-control" />
+    <br />
+    <label>Square Meter information</label>
+    <input type="text" asp-for="Area" class="form-control" />
+    <br />
+    <label>What floor</label>
+    <input type="text" asp-for="Floor" class="form-control" />
+    <br />
+    <label>Number of Parking Spaces</label>
+    <input type="text" asp-for="ParkingCount" class="form-control" />
+    <br />
+    <button class="btn btn-outline-dark">Save</button>
+</form>
+

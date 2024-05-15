@@ -1,0 +1,65 @@
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using MongoDB.Bson;
+using Villa.Business.Abstract;
+using Villa.Dto.Dtos.FeatureDtos;
+using Villa.Entity.Entites;
+
+namespace Villa.WebUi.Controllers
+{
+    [Authorize]
+    public class FeatureController : Controller
+    {
+        private readonly IFeatureService _featureService;
+        private readonly IMapper _mapper;
+
+        public FeatureController(IFeatureService featureService, IMapper mapper)
+        {
+            _featureService=featureService;
+            _mapper=mapper;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            var values = await _featureService.TGetListAsync();
+            var valueList = _mapper.Map<List<ResultFeatureDto>>(values);
+            return View(valueList);
+        }
+
+        public async Task<IActionResult> DeleteFeature(ObjectId id)
+        {
+            await _featureService.TDeleteAsync(id);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult CreateFeature()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateFeature(CreateFeatureDto createFeatureDto)
+        {
+            var newValue = _mapper.Map<Feature>(createFeatureDto);
+            await _featureService.TCreateAsync(newValue);
+            return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> UptadeFeature(ObjectId id)
+        {
+            var value = await _featureService.TGetByIdAsync(id);
+            var uptadeValue = _mapper.Map<UpdateFeatureDto>(value);
+            return View(uptadeValue);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UptadeFeature(UpdateFeatureDto uptadeFeatureDto)
+        {
+            var uptadeValue = _mapper.Map<Feature>(uptadeFeatureDto);
+            await _featureService.TUptadeAsync(uptadeValue);
+            return RedirectToAction("Index");
+        }
+
+    }
+}

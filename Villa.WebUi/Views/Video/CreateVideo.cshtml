@@ -1,0 +1,12 @@
+﻿@model CreateVideoDto
+@{
+    ViewData["Title"] = "New Video Add Page";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post">
+    <label>Video url</label>
+    <input type="text" asp-for="VideoUrl" class="form-control" />
+    <br />
+    <button class="btn btn-outline-dark">Save</button>
+</form>

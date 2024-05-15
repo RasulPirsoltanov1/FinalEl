@@ -1,0 +1,47 @@
+﻿@model ResultProductDto
+@{
+    ViewData["Title"] = "Our Properties Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-striped">
+    <tr>
+        <th><img src="@Model.ImageUrl" style="height:200px; width:200px" class="text-center" /></th>
+
+    </tr>
+    <tr>
+        <th>Address</th>
+        <td>@Model.Title</td>
+    </tr>
+    <tr>
+        <th>Category</th>
+        <td>@Model.Category</td>
+    </tr>
+    <tr>
+        <th>Price</th>
+        <td>@Model.Price</td>
+    </tr>
+    <tr>
+        <th>BedroomCount</th>
+        <td>@Model.BedroomCount</td>
+    </tr>
+    <tr>
+        <th>BathroomCount</th>
+        <td>@Model.BathroomCount</td>
+    </tr>
+    <tr>
+        <th>square meters</th>
+        <td>@Model.Area m2</td>
+    </tr>
+    <tr>
+        <th>what Floor</th>
+        <td>@Model.Floor</td>
+    </tr>
+    <tr>
+        <th>ParkingCount</th>
+        <td>@Model.ParkingCount</td>
+    </tr>
+</table>
+
+
+<a asp-controller="Product" asp-action="Index" class="btn btn-dar">Go Back to the Properties</a>
